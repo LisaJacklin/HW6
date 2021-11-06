@@ -1,4 +1,4 @@
-// hangman.cpp
+// shopping.cpp
 // Lisa Jacklin
 // CS 201
 // 11/3/2021
@@ -10,4 +10,3 @@ int main()
 {
     std::cout << "Hello World!\n";
 }
-
