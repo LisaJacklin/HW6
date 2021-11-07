@@ -9,18 +9,14 @@
 #include <map>
 #include <vector>
 
-
 struct Record {
     int key;
     double unitPrice;
     int units;
-
 };
 
 std::map<std::string, Record> storeItems;
-
 void printstring(std::vector <std::string> & a);
-void printint(std::vector <int>& a);
 
 int main()
 {
@@ -45,6 +41,7 @@ int main()
         std::cout << "4. Fruit\n";
         std::cout << "5. Cereal\n";
         std::cout << "6. remove an item from your cart\n";
+        std::cout << "7. View current cart\n";
         std::cout << "-----enter zero when complete------\n";
         std::cin >> choice;
         
@@ -88,8 +85,28 @@ int main()
             if (choice == 6) {
                 int remove;
                 std::cout << "What would you like to remove?\n";
+                std::cout << "Please enter the number of the position.\n";
+                //prints all values that are in the users cart
+                std::cout << "The Items in your cart are : ";
                 printstring(productinCart);
                 std::cin >>  remove;
+
+                //removes the position that this item is in.
+                numberinCart.erase(numberinCart.begin()+remove);
+                productinCart.erase(productinCart.begin() + remove);
+                std::cout << "What else would you like to add to your cart?\n";
+                std::cin >> choice;
+            }
+            if (choice == 7) {
+                std::cout << "------What's in Your Cart-------\n";
+                printstring(productinCart);
+                std::cout << "\nIf you'd like to continue shopping, select an Item\n";
+                std::cout << "If you'd like to checkout, please enter Zero\n";
+                std::cin >> choice;
+            }
+            if (choice > 7) {
+                std::cout << " Woah there! Please pick a different number!\n";
+                std::cin >> choice;
             }
         }
 
@@ -101,21 +118,18 @@ int main()
 }
 
 void printstring(std::vector <std::string> & a) {
-    std::cout << "The vector elements are : ";
 
     for (int i = 0; i < a.size(); i++)
         std::cout << a.at(i) << ' ';
 }
 
 void printint(std::vector <int>& a) {
-    std::cout << "The vector elements are : ";
 
     for (int i = 0; i < a.size(); i++)
-        std::cout << a.at(i) << ' ';
+        std::cout << a.at(i) << ' \n';
 }
 
 /*
-allow for more than one item to be added.
 Give an option to see their current shopping cart
  calculate total cost with accumulate() algorithm
 */
