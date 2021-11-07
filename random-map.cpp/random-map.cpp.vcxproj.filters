@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="random-map.cpp.cpp">
+    <ClCompile Include="random-map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
