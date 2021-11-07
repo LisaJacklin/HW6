@@ -26,12 +26,12 @@ int main()
     storeItems["fruit"] = {4, 8.25, 4 };
     storeItems["cereal"] = {5, 2.99 , 12 };
 
+    int choice;
+
+    std::vector<int> numberinCart;
+    std::vector<std::string> productinCart;
 
     while (true) {
-        int choice;
-
-        std::vector<int> numberinCart;
-        std::vector<std::string> productinCart;
 
         std::cout << "-------------Welcome to the Store!---------------\n";
         std::cout << "What would you like to add to your shopping cart?\n";
@@ -44,15 +44,14 @@ int main()
         std::cout << "7. View current cart\n";
         std::cout << "-----enter zero when complete------\n";
         std::cin >> choice;
-        
 
-        while( choice > 0) {
-            if (choice == 1) {
-                std::cout << "Gum was added to your cart!\n";
+        while(choice > 0) {
+            if (choice >= 5) {
+                std::cout << "An Item was added to your cart!\n";
                 numberinCart.push_back(1);
                 productinCart.push_back("gum");
                 std::cout << "What else would you like to add to your cart?\n";
-                    std::cin >> choice;
+                std::cin >> choice;
             }
             if (choice == 2) {
                 std::cout << "Milk was added to your cart!\n";
@@ -89,6 +88,7 @@ int main()
                 //prints all values that are in the users cart
                 std::cout << "The Items in your cart are : ";
                 printstring(productinCart);
+                std::cout << "\n"; 
                 std::cin >>  remove;
 
                 //removes the position that this item is in.
@@ -109,11 +109,23 @@ int main()
                 std::cin >> choice;
             }
         }
+  
+        if (choice == 0) {
+            std::cout << "-------Thank You for Shopping!-------\n";
+            std::cout << "Items Purchased: \n";
+            printstring(productinCart);
 
-       
+            std::cout << "Total Number of Items: ";
+            int totalitems = numberinCart.size();
+            std::cout << totalitems;
+            std::cout << "\n";
 
+
+        }
     }
-   
+
+        std::cout << "Press ENTER to quit ";
+        while (std::cin.get() != '\n');
 
 }
 
@@ -123,11 +135,7 @@ void printstring(std::vector <std::string> & a) {
         std::cout << a.at(i) << ' ';
 }
 
-void printint(std::vector <int>& a) {
 
-    for (int i = 0; i < a.size(); i++)
-        std::cout << a.at(i) << ' \n';
-}
 
 /*
 Give an option to see their current shopping cart
