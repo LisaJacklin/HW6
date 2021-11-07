@@ -19,7 +19,7 @@ int main()
 	//choose a random mean between 1 and 6
 	std::default_random_engine e1(r());
 	std::uniform_int_distribution<int> uniform_dist(1, 6);
-	int mean = uniform_dist(el);
+	int mean = uniform_dist(e1);
 	std::cout << "Randomly-chosen mean: " << mean << "\n";
 
 	//Generate a normal distribution around that mean
@@ -38,3 +38,23 @@ int main()
 	}
 
 }
+
+int RandomBetweenU(int first, int last) {
+	// returns a uniform random number between first and last
+}
+
+int RandomBetweenN(int first, int last) {
+	//Returns a normally distributed random number between first and last
+}
+
+int RandomBetween(int first, int last) {
+	//returns numbers using rand() function from the stdlib <stdlib.h>
+}
+
+void PrintDistribution(const std::map <int, int>& numbers) {
+	//prints a list of the random numbers clearly show they are normally or 
+	//uniformly distributed. (similar to the sample code above)
+}
+
+//Compare all three random number generators and print their histograms
+//Don't forget to include sample output!
