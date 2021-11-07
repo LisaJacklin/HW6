@@ -5,21 +5,29 @@
 //
 
 #include <iostream>
+#include <algorithm>
+#include <map>
 
 struct Record {
-    std::string unitName;
     double unitPrice;
     int units;
 
 };
 
+std::map<std::string, Record> storeItems;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    storeItems["gum"] = { 2.50, 5};
+    storeItems["milk"] = { 4.75, 2};
+    storeItems["candy"] = { 3.58, 8};
+    storeItems["fruit"] = { 8.25, 4 };
+    storeItems["cereal"] = { 2.99 , 12 };
+
+
+
 }
 
-//https://www.tutorialspoint.com/cplusplus-program-to-store-and-display-information-using-structure
 /*
 come up with a list of at least 5 items to sell to the user
 store these values in a map<string, record> object
