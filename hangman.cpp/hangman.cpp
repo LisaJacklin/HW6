@@ -114,12 +114,10 @@ int main()
             cout << " Right foot" << endl;
             cout << endl;
         }
-
         cout << endl;
         cout << "Characters used: " << lused << endl;
 
     }
-
     if (wrong == 10) {
         cout << endl;
         cout << "Unfortunately, you have been hung. The correct phrase: " << guessword << endl;
