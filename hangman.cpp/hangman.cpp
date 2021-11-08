@@ -17,7 +17,10 @@ using namespace std;
 int main()
 {
     vector<string> words{
-       
+        "Hello",
+        "something",
+        "Winter",
+        "University"
     };
     
     //randomizes shuffle of vector words
