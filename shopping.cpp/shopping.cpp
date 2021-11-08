@@ -31,22 +31,23 @@ int main()
     std::vector<int> numberinCart;
     std::vector<std::string> productinCart;
 
+    std::cout << "-------------Welcome to the Store!---------------\n";
+    std::cout << "What would you like to add to your shopping cart?\n";
+    std::cout << "1. Gum\n";
+    std::cout << "2. Milk\n";
+    std::cout << "3. Candy\n";
+    std::cout << "4. Fruit\n";
+    std::cout << "5. Cereal\n";
+    std::cout << "6. remove an item from your cart\n";
+    std::cout << "7. View current cart\n";
+    std::cout << "-----enter zero when complete------\n";
+
     while (true) {
 
-        std::cout << "-------------Welcome to the Store!---------------\n";
-        std::cout << "What would you like to add to your shopping cart?\n";
-        std::cout << "1. Gum\n";
-        std::cout << "2. Milk\n";
-        std::cout << "3. Candy\n";
-        std::cout << "4. Fruit\n";
-        std::cout << "5. Cereal\n";
-        std::cout << "6. remove an item from your cart\n";
-        std::cout << "7. View current cart\n";
-        std::cout << "-----enter zero when complete------\n";
         std::cin >> choice;
 
         while(choice > 0) {
-            if (choice >= 5) {
+            if (choice == 1) {
                 std::cout << "An Item was added to your cart!\n";
                 numberinCart.push_back(1);
                 productinCart.push_back("gum");
@@ -109,24 +110,22 @@ int main()
                 std::cin >> choice;
             }
         }
-  
         if (choice == 0) {
             std::cout << "-------Thank You for Shopping!-------\n";
-            std::cout << "Items Purchased: \n";
+            std::cout << "Items Purchased: ";
             printstring(productinCart);
 
-            std::cout << "Total Number of Items: ";
+            std::cout << "\nTotal Number of Items: ";
             int totalitems = numberinCart.size();
             std::cout << totalitems;
             std::cout << "\n";
 
-
+            std::cout << "Press ENTER to quit ";
+            while (std::cin.get() != '\n');
         }
+
     }
-
-        std::cout << "Press ENTER to quit ";
-        while (std::cin.get() != '\n');
-
+    
 }
 
 void printstring(std::vector <std::string> & a) {
@@ -134,10 +133,3 @@ void printstring(std::vector <std::string> & a) {
     for (int i = 0; i < a.size(); i++)
         std::cout << a.at(i) << ' ';
 }
-
-
-
-/*
-Give an option to see their current shopping cart
- calculate total cost with accumulate() algorithm
-*/
