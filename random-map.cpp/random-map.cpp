@@ -42,16 +42,17 @@ int main()
 int RandomBetweenU(int first, int last) {
 	// returns a uniform random number between first and last
     std::random_device r;
-
-    std::default_random_engine e1(r());
-    std::uniform_int_distribution<int> uniform_dist(first, last);
-    int mean = uniform_dist(e1);
-    std::cout << "Randomly-chosen mean: " << mean << '\n';
-
+    std::mt19937 gen;
+    std::uniform_real_distribution<> disstrib1(first, last);
+    return 0;
 }
 
 int RandomBetweenN(int first, int last) {
 	//Returns a normally distributed random number between first and last
+    std::random_device r;
+    std::mt19937 gen;
+    std::normal_distribution<> normal_dist(first, last);
+    return 0;
 }
 
 int RandomBetween(int first, int last) {
