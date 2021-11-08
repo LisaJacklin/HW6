@@ -91,7 +91,7 @@ int main()
                 printstring(productinCart);
                 std::cout << "\n"; 
                 std::cin >>  remove;
-
+                    
                 //removes the position that this item is in.
                 numberinCart.erase(numberinCart.begin()+remove);
                 productinCart.erase(productinCart.begin() + remove);
@@ -119,9 +119,6 @@ int main()
             int totalitems = numberinCart.size();
             std::cout << totalitems;
             std::cout << "\n";
-
-            std::cout << "Press ENTER to quit ";
-            while (std::cin.get() != '\n');
         }
 
     }
@@ -131,5 +128,5 @@ int main()
 void printstring(std::vector <std::string> & a) {
 
     for (int i = 0; i < a.size(); i++)
-        std::cout << a.at(i) << ' ';
+        std::cout << i<< ". " << a.at(i) << "\n";
 }
